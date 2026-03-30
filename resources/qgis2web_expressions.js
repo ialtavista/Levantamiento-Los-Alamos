@@ -763,3 +763,17 @@ function fnc__specialcol_(values, context) {
 function fnc_project_color(values, context) {
     return false;
 };
+
+
+
+function exp_label_Colector_3_eval_expression(context) {
+    // Name
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return feature.get('Name') ;
+    } else {
+        return feature.get('Name') ;
+    }
+}

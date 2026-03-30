@@ -1,5 +1,3 @@
-ol.proj.proj4.register(proj4);
-//ol.proj.get("EPSG:32718").setExtent([632004.395391, 5829750.971386, 646291.711422, 5840068.160930]);
 var wms_layers = [];
 
 
@@ -14,61 +12,102 @@ var wms_layers = [];
                 url: 'http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}'
             })
         });
-var format_Colector_1 = new ol.format.GeoJSON();
-var features_Colector_1 = format_Colector_1.readFeatures(json_Colector_1, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:32718'});
-var jsonSource_Colector_1 = new ol.source.Vector({
+var format_direccionDeFlujoDBGeneralLosAlamos_1 = new ol.format.GeoJSON();
+var features_direccionDeFlujoDBGeneralLosAlamos_1 = format_direccionDeFlujoDBGeneralLosAlamos_1.readFeatures(json_direccionDeFlujoDBGeneralLosAlamos_1, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_direccionDeFlujoDBGeneralLosAlamos_1 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_Colector_1.addFeatures(features_Colector_1);
-var lyr_Colector_1 = new ol.layer.Vector({
+jsonSource_direccionDeFlujoDBGeneralLosAlamos_1.addFeatures(features_direccionDeFlujoDBGeneralLosAlamos_1);
+var lyr_direccionDeFlujoDBGeneralLosAlamos_1 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_Colector_1, 
-                style: style_Colector_1,
+                source:jsonSource_direccionDeFlujoDBGeneralLosAlamos_1, 
+                style: style_direccionDeFlujoDBGeneralLosAlamos_1,
+                popuplayertitle: 'direccionDeFlujoDBGeneralLosAlamos',
+                interactive: true,
+                title: '<img src="styles/legend/direccionDeFlujoDBGeneralLosAlamos_1.png" /> direccionDeFlujoDBGeneralLosAlamos'
+            });
+var format_AGUASSERVIDASpeas_2 = new ol.format.GeoJSON();
+var features_AGUASSERVIDASpeas_2 = format_AGUASSERVIDASpeas_2.readFeatures(json_AGUASSERVIDASpeas_2, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_AGUASSERVIDASpeas_2 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_AGUASSERVIDASpeas_2.addFeatures(features_AGUASSERVIDASpeas_2);
+var lyr_AGUASSERVIDASpeas_2 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_AGUASSERVIDASpeas_2, 
+                style: style_AGUASSERVIDASpeas_2,
+                popuplayertitle: 'AGUAS-SERVIDAS — peas',
+                interactive: true,
+                title: '<img src="styles/legend/AGUASSERVIDASpeas_2.png" /> AGUAS-SERVIDAS — peas'
+            });
+var format_Colector_3 = new ol.format.GeoJSON();
+var features_Colector_3 = format_Colector_3.readFeatures(json_Colector_3, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Colector_3 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Colector_3.addFeatures(features_Colector_3);
+var lyr_Colector_3 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Colector_3, 
+                style: style_Colector_3,
                 popuplayertitle: 'Colector',
-                interactive: false,
+                interactive: true,
     title: 'Colector<br />\
-    <img src="styles/legend/Colector_1_0.png" /> PENDIENTE<br />\
-    <img src="styles/legend/Colector_1_1.png" /> VERIFICADO<br />' });
-var format_Cmara_2 = new ol.format.GeoJSON();
-var features_Cmara_2 = format_Cmara_2.readFeatures(json_Cmara_2, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:32718'});
-var jsonSource_Cmara_2 = new ol.source.Vector({
+    <img src="styles/legend/Colector_3_0.png" /> PENDIENTE<br />\
+    <img src="styles/legend/Colector_3_1.png" /> VERIFICADO<br />\
+    <img src="styles/legend/Colector_3_2.png" /> SEMI VERIFICADO<br />' });
+var format_Cmara_4 = new ol.format.GeoJSON();
+var features_Cmara_4 = format_Cmara_4.readFeatures(json_Cmara_4, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Cmara_4 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_Cmara_2.addFeatures(features_Cmara_2);
-var lyr_Cmara_2 = new ol.layer.Vector({
+jsonSource_Cmara_4.addFeatures(features_Cmara_4);
+var lyr_Cmara_4 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_Cmara_2, 
-                style: style_Cmara_2,
+                source:jsonSource_Cmara_4, 
+                style: style_Cmara_4,
                 popuplayertitle: 'Cámara',
                 interactive: true,
     title: 'Cámara<br />\
-    <img src="styles/legend/Cmara_2_0.png" /> PENDIENTE<br />\
-    <img src="styles/legend/Cmara_2_1.png" /> INSPECCIONADA<br />\
-    <img src="styles/legend/Cmara_2_2.png" /> CON NIVEL<br />\
-    <img src="styles/legend/Cmara_2_3.png" /> SELLADA<br />\
-    <img src="styles/legend/Cmara_2_4.png" /> NO ENCONTRADA<br />\
-    <img src="styles/legend/Cmara_2_5.png" /> SIN ACCESO<br />\
-    <img src="styles/legend/Cmara_2_6.png" /> ENTERRADA<br />\
-    <img src="styles/legend/Cmara_2_7.png" /> NO INSPECCIONABLE<br />' });
+    <img src="styles/legend/Cmara_4_0.png" /> PENDIENTE<br />\
+    <img src="styles/legend/Cmara_4_1.png" /> INSPECCIONADA<br />\
+    <img src="styles/legend/Cmara_4_2.png" /> CON NIVEL<br />\
+    <img src="styles/legend/Cmara_4_3.png" /> SELLADA<br />\
+    <img src="styles/legend/Cmara_4_4.png" /> NO ENCONTRADA<br />\
+    <img src="styles/legend/Cmara_4_5.png" /> SIN ACCESO<br />\
+    <img src="styles/legend/Cmara_4_6.png" /> ENTERRADA<br />\
+    <img src="styles/legend/Cmara_4_7.png" /> NO INSPECCIONABLE<br />' });
+var group_Topografia = new ol.layer.Group({
+                                layers: [],
+                                fold: 'open',
+                                title: 'Topografia'});
 var group_Levantamiento = new ol.layer.Group({
-                                layers: [lyr_Colector_1,lyr_Cmara_2,],
+                                layers: [lyr_Colector_3,lyr_Cmara_4,],
                                 fold: 'open',
                                 title: 'Levantamiento'});
 var group_Referencial = new ol.layer.Group({
-                                layers: [],
-                                fold: 'close',
+                                layers: [lyr_direccionDeFlujoDBGeneralLosAlamos_1,lyr_AGUASSERVIDASpeas_2,],
+                                fold: 'open',
                                 title: 'Referencial'});
 
-lyr_GoogleSatelite_0.setVisible(true);lyr_Colector_1.setVisible(true);lyr_Cmara_2.setVisible(true);
-var layersList = [lyr_GoogleSatelite_0,group_Levantamiento];
-lyr_Colector_1.set('fieldAliases', {'fid': 'fid', 'id': 'id', 'Name': 'Name', 'description': 'description', 'timestamp': 'timestamp', 'begin': 'begin', 'end': 'end', 'altitudeMode': 'altitudeMode', 'tessellate': 'tessellate', 'extrude': 'extrude', 'visibility': 'visibility', 'drawOrder': 'drawOrder', 'icon': 'icon', 'snippet': 'snippet', 'ESTADO': 'ESTADO', 'DIAMETRO': 'DIAMETRO', 'CAMARA_INICIO': 'CAMARA_INICIO', 'CAMARA_FINAL': 'CAMARA_FINAL', 'OBSERVACIONES': 'OBSERVACIONES', });
-lyr_Cmara_2.set('fieldAliases', {'fid': 'fid', 'id': 'id', 'Name': 'Name', 'description': 'description', 'IDENTIFICA': 'IDENTIFICA', 'ESTADO': 'ESTADO', 'COTA ENTRADA 1': 'COTA ENTRADA 1', 'COTA ENTRADA 2': 'COTA ENTRADA 2', 'COTA ENTRADA 3': 'COTA ENTRADA 3', 'COTA ENTRADA 4': 'COTA ENTRADA 4', 'COTA FONDO': 'COTA FONDO', 'ESCALINES': 'ESCALINES', 'OBSERVACIONES': 'OBSERVACIONES', 'DIRECCION': 'DIRECCION', 'FOTOGRAFIA PANORAMICA': 'FOTOGRAFIA PANORAMICA', 'FOTOGRAFIA INTERIOR': 'FOTOGRAFIA INTERIOR', 'COTA SALIDA': 'COTA SALIDA', 'COTA ENTRADA 5': 'COTA ENTRADA 5', 'DIAMETRO ENTRADA 1': 'DIAMETRO ENTRADA 1', 'DIAMETRO ENTRADA 2': 'DIAMETRO ENTRADA 2', 'DIAMETRO ENTRADA 3': 'DIAMETRO ENTRADA 3', 'DIAMETRO ENTRADA 4': 'DIAMETRO ENTRADA 4', 'DIAMETRO ENTRADA 5': 'DIAMETRO ENTRADA 5', 'PROFUNDIDAD ENTRADA 1': 'PROFUNDIDAD ENTRADA 1', 'PROFUNDIDAD ENTRADA 2': 'PROFUNDIDAD ENTRADA 2', 'PROFUNDIDAD ENTRADA 4': 'PROFUNDIDAD ENTRADA 4', 'PROFUNDIDAD ENTRADA 5': 'PROFUNDIDAD ENTRADA 5', 'PROFUNDIDAD FONDO': 'PROFUNDIDAD FONDO', 'PROFUNDIDAD SALIDA': 'PROFUNDIDAD SALIDA', 'PROFUNDIDAD ENTRADA 3': 'PROFUNDIDAD ENTRADA 3', 'DIAMETRO SALIDA': 'DIAMETRO SALIDA', 'FOTOGRAFIA HALLAZGO 1': 'FOTOGRAFIA HALLAZGO 1', 'FOTOGRAFIA HALLAZGO 2': 'FOTOGRAFIA HALLAZGO 2', });
-lyr_Colector_1.set('fieldImages', {'fid': 'TextEdit', 'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'timestamp': 'DateTime', 'begin': 'DateTime', 'end': 'DateTime', 'altitudeMode': 'TextEdit', 'tessellate': 'Range', 'extrude': 'Range', 'visibility': 'Range', 'drawOrder': 'Range', 'icon': 'TextEdit', 'snippet': 'TextEdit', 'ESTADO': 'ValueMap', 'DIAMETRO': 'TextEdit', 'CAMARA_INICIO': 'ValueRelation', 'CAMARA_FINAL': 'ValueRelation', 'OBSERVACIONES': 'TextEdit', });
-lyr_Cmara_2.set('fieldImages', {'fid': 'TextEdit', 'id': 'TextEdit', 'Name': 'TextEdit', 'description': 'TextEdit', 'IDENTIFICA': 'TextEdit', 'ESTADO': 'ValueMap', 'COTA ENTRADA 1': 'TextEdit', 'COTA ENTRADA 2': 'TextEdit', 'COTA ENTRADA 3': 'TextEdit', 'COTA ENTRADA 4': 'TextEdit', 'COTA FONDO': 'TextEdit', 'ESCALINES': 'Range', 'OBSERVACIONES': 'TextEdit', 'DIRECCION': 'TextEdit', 'FOTOGRAFIA PANORAMICA': 'ExternalResource', 'FOTOGRAFIA INTERIOR': 'ExternalResource', 'COTA SALIDA': 'TextEdit', 'COTA ENTRADA 5': 'TextEdit', 'DIAMETRO ENTRADA 1': 'TextEdit', 'DIAMETRO ENTRADA 2': 'TextEdit', 'DIAMETRO ENTRADA 3': 'TextEdit', 'DIAMETRO ENTRADA 4': 'TextEdit', 'DIAMETRO ENTRADA 5': 'TextEdit', 'PROFUNDIDAD ENTRADA 1': 'TextEdit', 'PROFUNDIDAD ENTRADA 2': 'TextEdit', 'PROFUNDIDAD ENTRADA 4': 'TextEdit', 'PROFUNDIDAD ENTRADA 5': 'TextEdit', 'PROFUNDIDAD FONDO': 'TextEdit', 'PROFUNDIDAD SALIDA': 'TextEdit', 'PROFUNDIDAD ENTRADA 3': 'TextEdit', 'DIAMETRO SALIDA': 'TextEdit', 'FOTOGRAFIA HALLAZGO 1': 'ExternalResource', 'FOTOGRAFIA HALLAZGO 2': 'ExternalResource', });
-lyr_Colector_1.set('fieldLabels', {'fid': 'no label', 'id': 'no label', 'Name': 'no label', 'description': 'no label', 'timestamp': 'no label', 'begin': 'no label', 'end': 'no label', 'altitudeMode': 'no label', 'tessellate': 'no label', 'extrude': 'no label', 'visibility': 'no label', 'drawOrder': 'no label', 'icon': 'no label', 'snippet': 'no label', 'ESTADO': 'no label', 'DIAMETRO': 'no label', 'CAMARA_INICIO': 'no label', 'CAMARA_FINAL': 'no label', 'OBSERVACIONES': 'no label', });
-lyr_Cmara_2.set('fieldLabels', {'fid': 'hidden field', 'id': 'hidden field', 'Name': 'hidden field', 'description': 'hidden field', 'IDENTIFICA': 'inline label - visible with data', 'ESTADO': 'inline label - visible with data', 'COTA ENTRADA 1': 'hidden field', 'COTA ENTRADA 2': 'hidden field', 'COTA ENTRADA 3': 'hidden field', 'COTA ENTRADA 4': 'hidden field', 'COTA FONDO': 'hidden field', 'ESCALINES': 'hidden field', 'OBSERVACIONES': 'hidden field', 'DIRECCION': 'inline label - visible with data', 'FOTOGRAFIA PANORAMICA': 'inline label - visible with data', 'FOTOGRAFIA INTERIOR': 'hidden field', 'COTA SALIDA': 'hidden field', 'COTA ENTRADA 5': 'hidden field', 'DIAMETRO ENTRADA 1': 'hidden field', 'DIAMETRO ENTRADA 2': 'hidden field', 'DIAMETRO ENTRADA 3': 'hidden field', 'DIAMETRO ENTRADA 4': 'hidden field', 'DIAMETRO ENTRADA 5': 'hidden field', 'PROFUNDIDAD ENTRADA 1': 'hidden field', 'PROFUNDIDAD ENTRADA 2': 'hidden field', 'PROFUNDIDAD ENTRADA 4': 'hidden field', 'PROFUNDIDAD ENTRADA 5': 'hidden field', 'PROFUNDIDAD FONDO': 'hidden field', 'PROFUNDIDAD SALIDA': 'hidden field', 'PROFUNDIDAD ENTRADA 3': 'hidden field', 'DIAMETRO SALIDA': 'hidden field', 'FOTOGRAFIA HALLAZGO 1': 'hidden field', 'FOTOGRAFIA HALLAZGO 2': 'hidden field', });
-lyr_Cmara_2.on('precompose', function(evt) {
+lyr_GoogleSatelite_0.setVisible(true);lyr_direccionDeFlujoDBGeneralLosAlamos_1.setVisible(true);lyr_AGUASSERVIDASpeas_2.setVisible(true);lyr_Colector_3.setVisible(true);lyr_Cmara_4.setVisible(true);
+var layersList = [lyr_GoogleSatelite_0,group_Referencial,group_Levantamiento];
+lyr_direccionDeFlujoDBGeneralLosAlamos_1.set('fieldAliases', {'fid': 'fid', 'OBJECTID_1': 'OBJECTID_1', 'OBJECTID': 'OBJECTID', 'IDFLUJO': 'IDFLUJO', 'Shape__Area': 'Shape__Area', 'Shape__Length': 'Shape__Length', 'GlobalID': 'GlobalID', 'CreationDate': 'CreationDate', 'Creator': 'Creator', 'EditDate': 'EditDate', 'Editor': 'Editor', 'Sector': 'Sector', });
+lyr_AGUASSERVIDASpeas_2.set('fieldAliases', {'fid': 'fid', 'OBJECTID': 'OBJECTID', 'IDENTIFICADORELEMENTO': 'IDENTIFICADORELEMENTO', 'SUBTYPE': 'SUBTYPE', 'NOMBRE': 'NOMBRE', 'MEDIDORCAUDAL': 'MEDIDORCAUDAL', 'CONFIGURACION': 'CONFIGURACION', 'GOLPE_ARIETE': 'GOLPE_ARIETE', 'SUBESTACION': 'SUBESTACION', 'VENTILACION': 'VENTILACION', 'IZAMIENTO': 'IZAMIENTO', 'SISTEMA_REBALSE': 'SISTEMA_REBALSE', 'ESTADO': 'ESTADO', 'OBSERVACION': 'OBSERVACION', 'GlobalID': 'GlobalID', 'CreationDate': 'CreationDate', 'Creator': 'Creator', 'EditDate': 'EditDate', 'Editor': 'Editor', });
+lyr_Colector_3.set('fieldAliases', {'fid': 'fid', 'id': 'id', 'ESTADO': 'ESTADO', 'DIAMETRO': 'DIAMETRO', 'CAMARA_INICIO': 'CAMARA_INICIO', 'CAMARA_FINAL': 'CAMARA_FINAL', 'OBSERVACIONES': 'OBSERVACIONES', });
+lyr_Cmara_4.set('fieldAliases', {'fid': 'fid', 'IDENTIFICA': 'IDENTIFICA', 'ESTADO': 'ESTADO', 'COTA ENTRADA 1': 'COTA ENTRADA 1', 'COTA ENTRADA 2': 'COTA ENTRADA 2', 'COTA ENTRADA 3': 'COTA ENTRADA 3', 'COTA ENTRADA 4': 'COTA ENTRADA 4', 'COTA FONDO': 'COTA FONDO', 'ESCALINES': 'ESCALINES', 'OBSERVACIONES': 'OBSERVACIONES', 'DIRECCION': 'DIRECCION', 'FOTOGRAFIA PANORAMICA': 'FOTOGRAFIA PANORAMICA', 'FOTOGRAFIA INTERIOR': 'FOTOGRAFIA INTERIOR', 'COTA SALIDA': 'COTA SALIDA', 'COTA ENTRADA 5': 'COTA ENTRADA 5', 'DIAMETRO ENTRADA 1': 'DIAMETRO ENTRADA 1', 'DIAMETRO ENTRADA 2': 'DIAMETRO ENTRADA 2', 'DIAMETRO ENTRADA 3': 'DIAMETRO ENTRADA 3', 'DIAMETRO ENTRADA 4': 'DIAMETRO ENTRADA 4', 'DIAMETRO ENTRADA 5': 'DIAMETRO ENTRADA 5', 'PROFUNDIDAD ENTRADA 1': 'PROFUNDIDAD ENTRADA 1', 'PROFUNDIDAD ENTRADA 2': 'PROFUNDIDAD ENTRADA 2', 'PROFUNDIDAD ENTRADA 4': 'PROFUNDIDAD ENTRADA 4', 'PROFUNDIDAD ENTRADA 5': 'PROFUNDIDAD ENTRADA 5', 'PROFUNDIDAD FONDO': 'PROFUNDIDAD FONDO', 'PROFUNDIDAD SALIDA': 'PROFUNDIDAD SALIDA', 'PROFUNDIDAD ENTRADA 3': 'PROFUNDIDAD ENTRADA 3', 'DIAMETRO SALIDA': 'DIAMETRO SALIDA', 'FOTOGRAFIA HALLAZGO 1': 'FOTOGRAFIA HALLAZGO 1', 'FOTOGRAFIA HALLAZGO 2': 'FOTOGRAFIA HALLAZGO 2', 'FALLA ESTRUCTURAL': 'FALLA ESTRUCTURAL', 'DIAMETRO SALIDA 2': 'DIAMETRO SALIDA 2', 'EMBANCAMIENTO': 'EMBANCAMIENTO', 'REQUIERE LIMPIEZA?': 'REQUIERE LIMPIEZA?', 'DIAMETRO SALIDA 3': 'DIAMETRO SALIDA 3', 'COMUNA': 'COMUNA', 'ESTADO CANAL': 'ESTADO CANAL', 'ESTADO BANQUETA': 'ESTADO BANQUETA', 'NAPA': 'NAPA', 'ESTADO ESCALINES': 'ESTADO ESCALINES', 'PROFUNDIDAD SALIDA 2': 'PROFUNDIDAD SALIDA 2', 'TAPA METALICA': 'TAPA METALICA', 'DENTRO DOMICILIO': 'DENTRO DOMICILIO', 'TERRENO NATURAL INACCESIBLE': 'TERRENO NATURAL INACCESIBLE', 'DIFICULTAD FISICA': 'DIFICULTAD FISICA', 'SALIDA 3': 'SALIDA 3', 'E (m) RTK': 'E (m) RTK', 'N (m) RTK': 'N (m) RTK', 'COTA ANILLO (m) RTK': 'COTA ANILLO (m) RTK', 'PFODUNDIDAD FONDO (m)': 'PFODUNDIDAD FONDO (m)', 'COTA FONDO (m) RTK': 'COTA FONDO (m) RTK', });
+lyr_direccionDeFlujoDBGeneralLosAlamos_1.set('fieldImages', {'fid': '', 'OBJECTID_1': '', 'OBJECTID': '', 'IDFLUJO': '', 'Shape__Area': '', 'Shape__Length': '', 'GlobalID': '', 'CreationDate': '', 'Creator': '', 'EditDate': '', 'Editor': '', 'Sector': '', });
+lyr_AGUASSERVIDASpeas_2.set('fieldImages', {'fid': '', 'OBJECTID': '', 'IDENTIFICADORELEMENTO': '', 'SUBTYPE': '', 'NOMBRE': '', 'MEDIDORCAUDAL': '', 'CONFIGURACION': '', 'GOLPE_ARIETE': '', 'SUBESTACION': '', 'VENTILACION': '', 'IZAMIENTO': '', 'SISTEMA_REBALSE': '', 'ESTADO': '', 'OBSERVACION': '', 'GlobalID': '', 'CreationDate': '', 'Creator': '', 'EditDate': '', 'Editor': '', });
+lyr_Colector_3.set('fieldImages', {'fid': 'TextEdit', 'id': 'TextEdit', 'ESTADO': 'ValueMap', 'DIAMETRO': 'TextEdit', 'CAMARA_INICIO': 'ValueRelation', 'CAMARA_FINAL': 'ValueRelation', 'OBSERVACIONES': 'TextEdit', });
+lyr_Cmara_4.set('fieldImages', {'fid': 'TextEdit', 'IDENTIFICA': 'TextEdit', 'ESTADO': 'ValueMap', 'COTA ENTRADA 1': 'TextEdit', 'COTA ENTRADA 2': 'TextEdit', 'COTA ENTRADA 3': 'TextEdit', 'COTA ENTRADA 4': 'TextEdit', 'COTA FONDO': 'TextEdit', 'ESCALINES': 'Range', 'OBSERVACIONES': 'TextEdit', 'DIRECCION': 'TextEdit', 'FOTOGRAFIA PANORAMICA': 'ExternalResource', 'FOTOGRAFIA INTERIOR': 'ExternalResource', 'COTA SALIDA': 'TextEdit', 'COTA ENTRADA 5': 'TextEdit', 'DIAMETRO ENTRADA 1': 'TextEdit', 'DIAMETRO ENTRADA 2': 'TextEdit', 'DIAMETRO ENTRADA 3': 'TextEdit', 'DIAMETRO ENTRADA 4': 'TextEdit', 'DIAMETRO ENTRADA 5': 'TextEdit', 'PROFUNDIDAD ENTRADA 1': 'TextEdit', 'PROFUNDIDAD ENTRADA 2': 'TextEdit', 'PROFUNDIDAD ENTRADA 4': 'TextEdit', 'PROFUNDIDAD ENTRADA 5': 'TextEdit', 'PROFUNDIDAD FONDO': 'TextEdit', 'PROFUNDIDAD SALIDA': 'TextEdit', 'PROFUNDIDAD ENTRADA 3': 'TextEdit', 'DIAMETRO SALIDA': 'TextEdit', 'FOTOGRAFIA HALLAZGO 1': 'ExternalResource', 'FOTOGRAFIA HALLAZGO 2': 'ExternalResource', 'FALLA ESTRUCTURAL': 'CheckBox', 'DIAMETRO SALIDA 2': 'TextEdit', 'EMBANCAMIENTO': 'TextEdit', 'REQUIERE LIMPIEZA?': 'CheckBox', 'DIAMETRO SALIDA 3': 'TextEdit', 'COMUNA': 'TextEdit', 'ESTADO CANAL': 'TextEdit', 'ESTADO BANQUETA': 'TextEdit', 'NAPA': 'TextEdit', 'ESTADO ESCALINES': 'TextEdit', 'PROFUNDIDAD SALIDA 2': 'TextEdit', 'TAPA METALICA': 'CheckBox', 'DENTRO DOMICILIO': 'CheckBox', 'TERRENO NATURAL INACCESIBLE': 'CheckBox', 'DIFICULTAD FISICA': 'CheckBox', 'SALIDA 3': 'TextEdit', 'E (m) RTK': 'TextEdit', 'N (m) RTK': 'TextEdit', 'COTA ANILLO (m) RTK': 'TextEdit', 'PFODUNDIDAD FONDO (m)': 'TextEdit', 'COTA FONDO (m) RTK': 'TextEdit', });
+lyr_direccionDeFlujoDBGeneralLosAlamos_1.set('fieldLabels', {'fid': 'no label', 'OBJECTID_1': 'no label', 'OBJECTID': 'no label', 'IDFLUJO': 'no label', 'Shape__Area': 'no label', 'Shape__Length': 'no label', 'GlobalID': 'no label', 'CreationDate': 'no label', 'Creator': 'no label', 'EditDate': 'no label', 'Editor': 'no label', 'Sector': 'no label', });
+lyr_AGUASSERVIDASpeas_2.set('fieldLabels', {'fid': 'no label', 'OBJECTID': 'no label', 'IDENTIFICADORELEMENTO': 'no label', 'SUBTYPE': 'no label', 'NOMBRE': 'no label', 'MEDIDORCAUDAL': 'no label', 'CONFIGURACION': 'no label', 'GOLPE_ARIETE': 'no label', 'SUBESTACION': 'no label', 'VENTILACION': 'no label', 'IZAMIENTO': 'no label', 'SISTEMA_REBALSE': 'no label', 'ESTADO': 'no label', 'OBSERVACION': 'no label', 'GlobalID': 'no label', 'CreationDate': 'no label', 'Creator': 'no label', 'EditDate': 'no label', 'Editor': 'no label', });
+lyr_Colector_3.set('fieldLabels', {'fid': 'hidden field', 'id': 'hidden field', 'ESTADO': 'inline label - visible with data', 'DIAMETRO': 'inline label - visible with data', 'CAMARA_INICIO': 'inline label - visible with data', 'CAMARA_FINAL': 'inline label - visible with data', 'OBSERVACIONES': 'inline label - visible with data', });
+lyr_Cmara_4.set('fieldLabels', {'fid': 'hidden field', 'IDENTIFICA': 'inline label - visible with data', 'ESTADO': 'inline label - visible with data', 'COTA ENTRADA 1': 'hidden field', 'COTA ENTRADA 2': 'hidden field', 'COTA ENTRADA 3': 'hidden field', 'COTA ENTRADA 4': 'hidden field', 'COTA FONDO': 'hidden field', 'ESCALINES': 'inline label - visible with data', 'OBSERVACIONES': 'inline label - visible with data', 'DIRECCION': 'inline label - visible with data', 'FOTOGRAFIA PANORAMICA': 'inline label - visible with data', 'FOTOGRAFIA INTERIOR': 'inline label - visible with data', 'COTA SALIDA': 'hidden field', 'COTA ENTRADA 5': 'hidden field', 'DIAMETRO ENTRADA 1': 'inline label - visible with data', 'DIAMETRO ENTRADA 2': 'inline label - visible with data', 'DIAMETRO ENTRADA 3': 'inline label - visible with data', 'DIAMETRO ENTRADA 4': 'inline label - visible with data', 'DIAMETRO ENTRADA 5': 'inline label - visible with data', 'PROFUNDIDAD ENTRADA 1': 'hidden field', 'PROFUNDIDAD ENTRADA 2': 'hidden field', 'PROFUNDIDAD ENTRADA 4': 'hidden field', 'PROFUNDIDAD ENTRADA 5': 'hidden field', 'PROFUNDIDAD FONDO': 'inline label - visible with data', 'PROFUNDIDAD SALIDA': 'hidden field', 'PROFUNDIDAD ENTRADA 3': 'hidden field', 'DIAMETRO SALIDA': 'inline label - visible with data', 'FOTOGRAFIA HALLAZGO 1': 'inline label - visible with data', 'FOTOGRAFIA HALLAZGO 2': 'inline label - visible with data', 'FALLA ESTRUCTURAL': 'hidden field', 'DIAMETRO SALIDA 2': 'inline label - visible with data', 'EMBANCAMIENTO': 'inline label - visible with data', 'REQUIERE LIMPIEZA?': 'hidden field', 'DIAMETRO SALIDA 3': 'inline label - visible with data', 'COMUNA': 'inline label - visible with data', 'ESTADO CANAL': 'inline label - visible with data', 'ESTADO BANQUETA': 'inline label - visible with data', 'NAPA': 'inline label - visible with data', 'ESTADO ESCALINES': 'inline label - visible with data', 'PROFUNDIDAD SALIDA 2': 'hidden field', 'TAPA METALICA': 'hidden field', 'DENTRO DOMICILIO': 'hidden field', 'TERRENO NATURAL INACCESIBLE': 'hidden field', 'DIFICULTAD FISICA': 'hidden field', 'SALIDA 3': 'hidden field', 'E (m) RTK': 'no label', 'N (m) RTK': 'no label', 'COTA ANILLO (m) RTK': 'no label', 'PFODUNDIDAD FONDO (m)': 'no label', 'COTA FONDO (m) RTK': 'no label', });
+lyr_Cmara_4.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
