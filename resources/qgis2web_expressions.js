@@ -766,7 +766,7 @@ function fnc_project_color(values, context) {
 
 
 
-function exp_label_Colector_3_eval_expression(context) {
+function exp_label_Colector_2_eval_expression(context) {
     // Name
 
     var feature = context.feature;
